@@ -1,0 +1,73 @@
+<%- include('header') -%>
+
+<div class="px-4 pt-5 pb-2 mt-5 text-center">
+    <h1 class="display-5 fw-bold">Employes</h1>
+    <p class="lead">In order to add a new Employe click on Register</p>
+        <div class="col-12">
+            <a href="/signup">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </a>
+            
+        </div>
+</div>
+
+<div class="px-4 py-5  text-center">
+    <div class="col-lg-8  mx-auto">
+        <div class="col-lg-6 mx-auto">
+            <p class="lead">You can Modify,Or delete any Employes infos here</p>
+        </div>
+
+    </div>
+</div>
+
+    <div class="col-md-5 text-end mb-4">
+        <form method="post" action="/search">
+            <label for="searchemploye" class="form-label d-flex flex-row"> Search for Employe by username</label>
+            <input type="search" name="searchemploye" class="form-control" placeholder="Search for Employe.." aria-label="Search">
+        </form>
+    </div>
+    
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form action="/employe" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+
+                <div class="col-12 mb-4">
+                    <label for="employeFirstName" class="form-label d-flex flex-row">First Name</label>
+                    <input type="text" name="employeFirstName" id="employeFirstName" class="form-control">
+                </div>
+               
+                <div class="col-12 mb-4">
+                    <label for="employeLastName" class="form-label d-flex flex-row">Last Name</label>
+                    <input type="text" name="employeLastName" id="employeLastName" class="form-control">
+                </div>
+                
+            
+                
+              
+                <div class="col-6 mb-4">
+                    <label for="username" class="form-label d-flex flex-row">Username</label>
+                    <input type="text" name="username" id="username" class="form-control">
+                </div>
+                
+                <div class="col-6 mb-4">
+                    <label for="password" class="form-label d-flex flex-row">Password</label>
+                    <input type="password" name="password" id="password" class="form-control">
+                </div>
+         
+                        
+              
+                <!--The AUD Buttons goes here-->
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center ">
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>

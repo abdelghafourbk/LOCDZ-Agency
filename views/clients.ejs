@@ -1,0 +1,82 @@
+<%- include('header') -%>
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Clients</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">You can add, Modify,Or delete any Client infos here</p>
+    </div>
+</div>
+
+    <div class="col-md-5 text-end mb-4">
+        <form method="post" action="/Rclient">
+            <label for="searchclient" class="form-label d-flex flex-row"> Search for Clients by driver's licence number</label>
+            <input type="search" name="searchclient" class="form-control" placeholder="Search for Client.." aria-label="Search">
+        </form>
+    </div>
+    
+<div class="row justify-content-center">
+    <% if(infoSubmitObj != ''){ %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+        </div>
+     <%}%>  
+    <% if(infoErrorObj != ''){ %>
+        <div class="col-8 alert alert-danger" role="alert">
+            Client Adding Failed!!
+        </div>
+     <%}%> 
+    
+    <div class="col-8">
+        <form action="/clients" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+
+                <div class="col-12 mb-4">
+                    <label for="clientFirstName" class="form-label d-flex flex-row">First Name</label>
+                    <input type="text" name="clientFirstName" id="clientFirstName" class="form-control">
+                </div>
+               
+                <div class="col-12 mb-4">
+                    <label for="clientLastName" class="form-label d-flex flex-row">Last Name</label>
+                    <input type="text" name="clientLastName" id="clientLastName" class="form-control">
+                </div>
+                
+            
+                <div class="col-12 mb-4">
+                    <label for="driverLicenceNumber" class="form-label d-flex flex-row">Driver Licence Number</label>
+                    <input type="text" name="driverLicenceNumber" id="driverLicenceNumber" class="form-control">
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <label for="adress" class="form-label d-flex flex-row">Adress</label>
+                    <input type="text" name="adress" id="adress" class="form-control">
+                </div>
+               
+                
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
+
+                    <div class="input-box">
+                        <span>Date of Birth </span>
+                        <input type="date" name="dateofbirth">
+                    </div>
+
+                    <div class="input-box">
+                        <span>Place of Birth </span>
+                        <input type="text" name="placeofbirth">
+                    </div>
+
+                </div>
+                
+                        
+              
+            
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center ">
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>

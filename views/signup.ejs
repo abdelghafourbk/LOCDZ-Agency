@@ -1,0 +1,30 @@
+<%- include('header') -%>
+   
+
+<div class="bigContainer">
+<div class="container" id="container">	
+	<div class="form-container sign-in-container">
+		<form action="/signup" method="post">
+			<h1>Register Employe</h1>
+                <input type="text"  placeholder="First Name" name="firstName">
+                <input type="text"  placeholder="Last Name" name="lastName">
+                <input type="text" placeholder="Username" name="userName">
+                <input type="password"  placeholder="Password" name="password">
+                <input type="password"  placeholder="Confirm Password" name="confirmPassword">
+                <input type="checkbox" id="isadmin"  name="isAdmin">
+                <label for="isadmin" class="mb-4">isAdmin</label>      
+            <button>Sign Up</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Add New Agent To The Company!</h1>
+				<p>Start your journey as agent in LOCDZ</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<%- include('footer') -%>

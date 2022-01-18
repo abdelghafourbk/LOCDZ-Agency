@@ -1,0 +1,19 @@
+<%- include('header') -%>
+
+<h1 class="pb-4">Search Results</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <% if(Rclient!= ''){ %>
+        <% Rclient.forEach(function(Rclient, index) { %>            
+    <a href="/Rclient/<%- Rclient._id %>" class="col text-center category__link">
+        <div class="pt-1"> <%- Rclient.lastName %> <%- Rclient.firstName %></div>
+    </a>
+    <% }) %>
+    <% }else{ %>
+        <p>No Results, Try another thing!</p>
+        <%}%>
+</div>
+
+
+<%- include('footer') -%>

@@ -1,0 +1,77 @@
+<%- include('header') -%>
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Contracts</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">You can add, Modify,Or delete any Contract infos here</p>
+    </div>
+</div>
+
+    <div class="col-md-5 text-end mb-4">
+        <form method="post" action="/contract">
+            <label for="searchcontract" class="form-label d-flex flex-row"> Search for Contract by ID</label>
+            <input type="search" name="searchcontract" class="form-control" placeholder="Search for Contract.." aria-label="Search">
+        </form>
+    </div>
+    
+<div class="row justify-content-center">
+    <% if(infoSubmitObj != ''){ %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+        </div>
+     <%}%>  
+    <% if(infoErrorObj != ''){ %>
+        <div class="col-8 alert alert-danger" role="alert">
+            Contract Adding Failed!!
+        </div>
+     <%}%> 
+    <div class="col-8">
+        <form action="/contracts" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+
+                <div class="col-12 mb-4">
+                    <label for="contractID" class="form-label d-flex flex-row">Contract ID</label>
+                    <input type="text" name="contractID" id="contractID" class="form-control"> 
+                </div>
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
+                    
+                    <div class="input-box">
+                        <span> Real Starting Date</span>
+                        <input type="date" name="realStartingDate">
+                    </div>
+                    
+                    <div class="col-12 mb-4">
+                        <label for="kilometrage" class="form-label d-flex flex-row">Kilometrage</label>
+                        <input type="text" name="kilometrage" id="kilometrage" class="form-control"> 
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label for="matricule" class="form-label d-flex flex-row">Car Matricule</label>
+                    <input type="text" name="Matricule" id="carMatricule" class="form-control"> 
+                </div>
+            
+                <div class="col-12 mb-4">
+                    <label for="driverLicenceNumber" class="form-label d-flex flex-row">Driver Licence Number</label>
+                    <input type="text" name="driverLicenceNumber" id="driverLicenceNumber" class="form-control">
+                </div>
+                
+                        
+              
+                <!--The AUD Buttons goes here-->
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center ">
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>

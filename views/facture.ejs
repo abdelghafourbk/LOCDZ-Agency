@@ -1,0 +1,103 @@
+<%- include('header') -%>
+
+<%if(facture != null){%>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Facture</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"><h1>Facture N°: <%-facture.factureID%></h1></div>
+                <div class="col-12">Contract N°: <%-facture.contractID%></div>
+                <div class="col-12 mb-4">Duration: <%-facture.duration%> Days</div>
+                <div class="col-12 mb-4"> Matricule: <%-facture.matricule%></div>
+                <div class="col-12 mb-4">Traveled Distance: <%-facture.traveledDistance%> KM</div>
+                <div class="col-12 mb-4">Driver Licence Number: <%-facture.driverLicenceNumber%></div>
+                <div class="col-12 mb-4">Price: <%-facture.price%> DA</div>
+            </div>
+            <a href="/facture/<%=facture._id%>/delete" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" onclick="return confirm('Are u sure to delete this facture?');">Delete Facture</a>
+        </div>
+       
+       
+    </div>
+
+<%}else{%>
+    <p>No facture Found</p>
+    <%}%>
+        
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Facture</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead">You can Update Facture here</p>
+        </div>
+    </div>
+    
+          
+<div class="row justify-content-center">
+    <% if(infoSubmitObj != ''){ %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+        </div>
+     <%}%>  
+    <% if(infoErrorObj != ''){ %>
+        <div class="col-8 alert alert-danger" role="alert">
+            facture Updating Failed!!
+        </div>
+     <%}%> 
+    <div class="col-8">
+        <form action="/facture/<%=facture._id%>" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+
+                <div class="col-6 mb-4">
+                    <label for="factureID" class="form-label d-flex flex-row">Facture ID</label>
+                    <input type="text" name="factureID" id="factureID" class="form-control" value="<%-facture.factureID%>"> 
+                </div>
+
+               
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
+                    
+                    <div class="col-4 mb-4">
+                        <label for="contractID" class="form-label d-flex flex-row">Contract ID</label>
+                        <input type="text" name="contractID" id="contractID" class="form-control"  value="<%-facture.contractID%>"> 
+                    </div>
+
+                    <div class="col-4  mb-4">
+                        <label for="duration" class="form-label d-flex flex-row">Duration</label>
+                        <input type="text" name="duration" id="duration" class="form-control"  value="<%-facture.duration%>"> 
+                    </div>
+
+                    <div class="col-4 mb-4">
+                        <label for="matricule" class="form-label d-flex flex-row">Car Matricule</label>
+                        <input type="text" name="Matricule" id="carMatricule" class="form-control"  value="<%-facture.matricule%>"> 
+                    </div>
+                </div>
+
+                <div class="col-4 mb-4">
+                    <label for="kilometrage" class="form-label d-flex flex-row"> Traveled Distance </label>
+                    <input type="text" name="kilometrage" id="kilometrage" class="form-control"  value="<%-facture.traveledDistance%>"> 
+                </div>
+            
+                <div class="col-8 mb-4">
+                    <label for="driverLicenceNumber" class="form-label d-flex flex-row">Driver Licence Number</label>
+                    <input type="text" name="driverLicenceNumber" id="driverLicenceNumber" class="form-control"  value="<%-facture.driverLicenceNumber%>">
+                </div>
+                
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center ">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Modify</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include('footer') -%>
+

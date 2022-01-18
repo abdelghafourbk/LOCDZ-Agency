@@ -1,0 +1,130 @@
+<%- include('header') -%>
+
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="assets/Intersection 1.png" class="d-block mx-lg-auto img-fluid" loading="lazy" width="450" alt="rental car">
+    </div>
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">Huge Selection of Different Cars</h1>
+        <p class="lead">
+            Explore our huge selection of different vehicules including: sport cars, trucks, pickups, minibus. All in one place at LOCDZ...
+        </p>
+        <!--This one for the two buttons-->
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/vehicules" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Vehicules</a>
+        </div>
+    </div>
+
+</div>
+<!--Categories-->
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 py-4">
+    <a href="/categories/PickupTruck" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="assets/pickup truck.png" alt="pickup" loading="lazy">
+            <div class="mb-3 pt-1">Pickup Truck</div>
+        </div> 
+    </a>
+    <a href="/categories/Touristic" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="assets/touristic.png" alt="pickup" loading="lazy">
+            <div class="mb-3 pt-1">Touristic Car</div>
+        </div> 
+    </a>
+    <a href="/categories/Truck" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="assets/truck.png" alt="pickup" loading="lazy">
+            <div class="mb-3 pt-1">Truck</div>
+        </div> 
+    </a>
+    <a href="/categories/SuperCar" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="assets/superCar.png" alt="pickup" loading="lazy">
+            <div class=" mb-3 pt-1">Super Car</div>
+        </div> 
+    </a>
+    
+    <a href="/categories/MiniBus" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="assets/minibus.png" alt="pickup" loading="lazy">
+            <div class="mb-3 pt-1">Minibus</div>
+        </div> 
+    </a>
+</div>
+<!--Categories end here-->
+
+<!--Ride-->
+    <section class="ride" id="ride">
+        <div class="text-center heading">
+            <span>How It Works</span>
+            <h1>Rent With 3 Easy Steps</h1>
+        </div>
+        <div class="ride-container">
+
+            <div class="box">
+                <i class='bx bxs-user'></i>
+                <h2>Ask An Agent</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas inventore porro assumenda ipsum odit dicta neque consectetur cumque nam explicabo velit impedit eligendi</p>
+            </div>
+            
+            <div class="box">
+                <i class='bx bxs-calendar-check'></i>
+                <h2>Pick-Up A Date</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas inventore porro assumenda ipsum odit dicta neque consectetur cumque nam explicabo velit impedit eligendi</p>
+            </div>
+
+            <div class="box">
+                <i class='bx bxs-calendar-star'></i>
+                <h2>Book A Car</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas inventore porro assumenda ipsum odit dicta neque consectetur cumque nam explicabo velit impedit eligendi</p>
+            </div>
+
+        </div>
+    </section>
+
+<!--End of ride-->
+
+<!--Some Cras start here-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Some Cars</h2>
+        <a href="/vehicules" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(vehicules!= ''){ %>
+            <% vehicules.forEach(function(vehicule, index) { %>            
+        <a href="/vehicule/<%- vehicule._id %>" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="assets/<%- vehicule.carImage %>" alt=" <%- vehicule.model %> <%- vehicule.name %> " loading="lazy">
+            </div>
+            <div class="pt-1"> <%- vehicule.model %> <%- vehicule.name %></div>
+        </a>
+        <% }) %>
+        <% } %>
+    </div>
+
+</section>
+
+<!--Some cars end here-->
+
+<!--Reseravtion part starts here-->
+
+<section class="px-4 py-5 my-5 text-center">
+    <img src="/assets/reservationimg.png" class="d-block mx-auto mb-4 img-fluid"  loading="lazy">
+    <h1 class="display-5 fw-bold">Check latest Reservations</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Consult latest Reservations, add,modify and delete them easily</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/reservations" class="btn btn-primaty btn-dark btn-lg">Consult Reservations</a>
+        </div>
+    </div>
+
+</section>
+
+
+<!--Reseravtion partends here-->
+
+<%- include('footer') -%>

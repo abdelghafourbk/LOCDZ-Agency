@@ -1,0 +1,84 @@
+<%- include('header') -%>
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Vehicules</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">You can add Vehicule here</p>
+    </div>
+</div>
+
+    
+<div class="row justify-content-center">
+    <% if(infoSubmitObj != ''){ %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+        </div>
+     <%}%>  
+    <% if(infoErrorObj != ''){ %>
+        <div class="col-8 alert alert-danger" role="alert">
+            Vehicule Adding Failed!!
+        </div>
+     <%}%> 
+
+    <div class="col-8">
+        <form action="/vehicules" enctype="multipart/form-data" method="post">
+            <div class="row g-3">
+                <div class="col-12 mb-4">
+                    <label for="carName" class="form-label d-flex flex-row">Car Name</label>
+                    <input type="text" name="carName" id="carName" class="form-control" required>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <label for="Category" class="d-flex flex-row"></label>
+                    <select class="form-select form-control" name="Category" id="carCategory">
+                        <option selected>Select Category</option>
+                        <option value="Touristic">Touristic</option>
+                        <option value="SuperCar">Super Car</option>
+                        <option value="PickupTruck">Pickup Truck</option>
+                        <option value="Truck">Truck</option>
+                        <option value="MiniBus">MiniBus</option>
+                    </select>
+                </div> 
+
+                <div class="col-12 mb-4">
+                    <label for="model" class="form-label d-flex flex-row">Model</label>
+                    <input type="text" name="Model" id="carModel" class="form-control" required>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <label for="rate" class="form-label d-flex flex-row">Rental Rate</label>
+                    <input type="text" name="Rate" id="carRate" class="form-control" required>
+                </div>
+               
+                <div class="col-12 mb-4">
+                    <label for="matricule" class="form-label d-flex flex-row">Matricule</label>
+                    <input type="text" name="Matricule" id="carMatricule" class="form-control"> 
+                </div>
+                
+                <div class="col-4 mb-4 d-flex flex-row align-items-center">
+                    <label for="Available" class="form-label ">is Available?</label>
+                    <input type="checkbox" name="Available" id="carAvailable" checked>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <label for="Kilometrage" class="form-label d-flex flex-row">Kilometrage</label>
+                    <input type="text" name="Kilometrage" id="carKilometrage" class="form-control" required>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label for="image" class="d-flex flex-row">Car Image</label>
+                    <input type="file" class="form-control" name="image" accept="image/*">
+                </div>
+
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center ">
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>

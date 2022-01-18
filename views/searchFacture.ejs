@@ -1,0 +1,19 @@
+<%- include('header') -%>
+
+<h1 class="pb-4">Search Results</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <% if(facture!= ''){ %>
+        <% facture.forEach(function(facture, index) { %>            
+    <a href="/facture/<%- facture._id %>" class="col text-center category__link">
+        <div class="pt-1">Facture N°:<%- facture.factureID %></div>
+    </a>
+    <% }) %>
+    <% }else{ %>
+        <p>No Results, Try another thing!</p>
+        <%}%>
+</div>
+
+
+<%- include('footer') -%>
